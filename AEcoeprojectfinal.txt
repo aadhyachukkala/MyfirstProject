@@ -1,0 +1,568 @@
+//calculating GPA-my automotive electronics COE project
+#include<stdio.h>
+#include<stdlib.h>
+#include<ctype.h>
+#include<cstdlib.h>
+#include<conio.h>
+#include<process.h>
+int el;
+float tp=0.000;
+float cre=0.000;
+int elec1()
+{   FILE *fp;
+    char c;
+    fp=fopen(“elect.txt”,”r”);
+    if(fp==NULL)
+    { printf(“\nEMPTY FILE”);
+      exit(0);}
+    c=fgetc(fp);
+    while(c!=EOF)
+    { printf(“%c”,c);
+      c=fgetc(fp);}
+    fclose(fp);
+    printf("\n\t\tChoose your elective index number:");
+    scanf(" %d ",el);
+    system(“cls”);
+    return el;
+}
+int elec2()
+{   FILE *fp;
+    char c;
+    fp=fopen(“elect2.txt”,”r”);
+    if(fp==NULL)
+    { printf(“\nEMPTY FILE”);
+      exit(0);}
+    c=fgetc(fp);
+    while(c!=EOF)
+    {printf(“%c”,c);
+     c=fgetc(fp);}
+    fclose(fp);
+    printf("\n\t\tChoose your elective index number:");
+    scanf(" %d ",el);
+    system(“cls”);
+    return el;
+
+}
+int elec3()
+{   FILE *fp;
+    char c;
+    fp=fopen(“elect3.txt”,”r”);
+    if(fp==NULL)
+    { printf(“\nEMPTY FILE”);
+      exit(0);}
+    c=fgetc(fp);
+    while(c!=EOF)
+    { printf(“%c”,c); 
+      c=fgetc(fp);}
+    fclose(fp);
+    printf("\n\t\tChoose your elective index number:");
+    scanf(" %d ",el);
+    system(“cls”);
+    return el;
+
+
+}
+int elec4()
+{   FILE *fp;
+    char c;
+    fp=fopen(“elect4.txt”,”r”);
+    if(fp==NULL)
+    { printf(“\nEMPTY FILE”);
+      exit(0);}
+    c=fgetc(fp);
+    while(c!=EOF)
+    {printf(“%c”,c);
+     c=fgetc(fp);}
+    fclose(fp);
+    printf("\n\t\tChoose your elective index number:");
+    scanf(" %d ",el);
+    system(“cls”);
+    return el;
+
+}
+int elec5()
+{   FILE *fp;
+    char c;
+    fp=fopen(“elect5.txt”,”r”);
+    if(fp==NULL)
+    { printf(“\nEMPTY FILE”);
+      exit(0);}
+    c=fgetc(fp);
+    while(c!=EOF)
+  { printf(“%c”,c);
+    c=fgetc(fp);}
+    fclose(fp);
+    printf("\n\t\tChoose your elective index number:");
+    scanf(" %d ",el);
+    system(“cls”);
+    return el;
+
+}
+struct info
+{
+char name[50];
+int rollno;
+}stu;
+int main()
+{
+int cr[8][10],ev[5],sn,i;
+char *ptr,ans;
+int elec1();
+int elec2();
+int elec3();
+int elec4();
+int elec5();
+printf("******************DEPARTMENT OF ELECTRICAL AND ELECTRONICS******************");
+printf("\n******************GPA CALCULATOR******************");
+printf(“\nName: ”);
+scanf(“%s”,stu.name);
+printf(“\nRoll Number: ”);
+scanf(“%d”,&stu.rollno);
+system(“cls”);
+do
+{printf("\t******************DEPARTMENT OF ELECTRICAL AND ELECTRONICS**********************");
+printf("\nEnter the semester number for calculating Grade Point Average");
+scanf("%d",&sn);
+printf("\n Enter the grades for the corresponding subject codes \n");
+switch(sn)
+{
+case 1:
+{ 
+  printf("\t******************DEPARTMENT OF ELECTRICAL AND ELECTRONICS******************");
+ ptr=(char *)malloc(9*sizeof(char));
+  printf("\nCY6151:"); scanf(" %c ",ptr+0);
+  printf("\nGE6151:"); scanf(" %c ",ptr+1);
+  printf("\nGE6152:"); scanf(" %c ",ptr+2);
+  printf("\nGE6161:"); scanf(" %c ",ptr+3);
+  printf("\nGE6162:"); scanf(" %c ",ptr+4);
+  printf("\nGE6163:"); scanf(" %c ",ptr+5);
+  printf("\nHS6151:"); scanf(" %c ",ptr+6);
+  printf("\nMA6151:"); scanf(" %c ",ptr+7);
+  printf("\nPH6151:"); scanf(" %c ",ptr+8);
+  cr[0][0]=3;cr[0][1]=3;cr[0][2]=4;cr[0][3]=2;cr[0][4]=2;cr[0][5]=1;cr[0][6]=4;cr[0][7]=4;cr[0][8]=3;
+  for(i=0;i<9;i++)
+  {
+  if(tolower(*(ptr+i))=='s')
+  { cre+=10*cr[0][i];
+    tp+=cr[0][i];}
+  else if(tolower(*(ptr+i))=='a')
+  {cre+=9*cr[0][i];
+   tp+=cr[0][i];}
+  else if(tolower(*(ptr+i))=='b')
+  {cre+=8*cr[0][i];
+   tp+=cr[0][i];}
+  else if(tolower(*(ptr+i))=='c')
+  {cre+=7*cr[0][i];
+   tp+=cr[0][i];}
+  else if(tolower(*(ptr+i))=='d')
+  {cre+=6*cr[0][i];
+   tp+=cr[0][i];}
+  else if(tolower(*(ptr+i))=='e')
+  {cre+=5*cr[0][i];
+   tp+=cr[0][i];}
+  else 
+  {cre+=0*cr[0][i];}
+  }
+  printf(“\nName\t%s”,stu.name);
+  printf(“\nRoll number\t%d,stu.rollno);
+  printf("\nTotal credit points earned\t%f",tp);
+  printf("\nTotal credits\t%f",cre);
+  gpa=cre/tp;
+  printf("\nYour gpa  is\t%.3f",gpa);
+  printf("\n\t\tEnter y or Y to continue");
+  scanf("%c",&ans);
+  system(“cls”);
+  free(ptr);
+  break;
+ }
+case 2:
+{ 
+printf("\t******************DEPARTMENT OF ELECTRICAL AND ELECTRONICS******************");
+ptr=(char *)malloc(9*sizeof(char));
+  printf("\nCY6251:"); scanf(" %c ",ptr+0);
+  printf("\nEE6201:"); scanf(" %c ",ptr+1);
+  printf("\nEE6211:"); scanf(" %c ",ptr+2);
+  printf("\nGE6251:"); scanf(" %c ",ptr+3);
+  printf("\nGE6262:"); scanf(" %c ",ptr+4);
+  printf("\nGE6263:"); scanf(" %c ",ptr+5);
+  printf("\nHS6251:"); scanf(" %c ",ptr+6);
+  printf("\nMA6251:"); scanf(" %c ",ptr+7);
+  printf("\nPH6251:"); scanf(" %c ",ptr+8);
+  cr[1][0]=3;cr[1][1]=4;cr[1][2]=2;cr[1][3]=4;cr[1][4]=1;cr[1][5]=2;cr[1][6]=4;cr[1][7]=4;cr[1][8]=3;
+   for(i=0;i<9;i++)
+  {
+  if(tolower(*(ptr+i))=='s')
+  { cre+=10*cr[1][i];
+   tp+=cr[1][i];}
+   else if(tolower(*(ptr+i))=='a')
+  {cre+=9*cr[1][i];
+   tp+=cr[1][i];}
+   else if(tolower(*(ptr+i))=='b')
+  {cre+=8*cr[1][i];
+   tp+=cr[1][i];}
+   else if(tolower(*(ptr+i))=='c')
+  {cre+=7*cr[1][i];
+    tp+=cr[1][i];}
+  else if(tolower(*(ptr+i))=='d')
+  {cre+=6*cr[1][i];
+   tp+=cr[1][i];}
+   else if(tolower(*(ptr+i))=='e')
+  {cre+=5*cr[1][i];
+   tp+=cr[1][i];}
+   else 
+  {cre+=0*cr[1][i];}
+ }
+ printf(“\nName\t%s”,stu.name);
+ printf(“\nRoll number\t%d,stu.rollno);
+ printf("\nTotal credit points earned\t%f",tp);
+ printf("\nTotal credits\t%f",cre);
+ gpa=cre/tp;
+ printf("\nYour gpa  is\t%.3f",gpa);
+ printf("\n\t\tEnter y or Y to continue\t");
+ scanf("%c",&ans);
+ system(“cls”);
+ free(ptr);
+ break;
+}
+case 3:
+{   
+printf("\t******************DEPARTMENT OF ELECTRICAL AND ELECTRONICS******************");
+ptr=(char *)malloc(8*sizeof(char));
+    printf("\nEC6202:"); scanf(" %c ",ptr+0);
+    printf("\nEC6361:"); scanf(" %c ",ptr+1);
+    printf("\nEE6301:"); scanf(" %c ",ptr+2);
+    printf("\nEE6302:"); scanf(" %c ",ptr+3);
+    printf("\nEE6303:"); scanf(" %c ",ptr+4);
+    printf("\nEE6311:"); scanf(" %c ",ptr+5);
+    printf("\nGE6351:"); scanf(" %c ",ptr+6);
+    printf("\nMA6351:"); scanf(" %c ",ptr+7);
+   cr[2][0]=4;cr[2][1]=2;cr[2][2]=4;cr[2][3]=4;cr[2][4]=3;cr[2][5]=2;cr[2][6]=3;cr[2][7]=4;
+   for(i=0;i<9;i++)
+  {
+  if(tolower(*(ptr+i))=='s')
+  { cre+=10*cr[2][i];
+   tp+=cr[2][i];}
+   else if(tolower(*(ptr+i))=='a')
+  {cre+=9*cr[2][i];
+    tp+=cr[2][i];}
+  else if(tolower(*(ptr+i))=='b')
+  {cre+=8*cr[2][i];
+   tp+=cr[2][i];}
+  else if(tolower(*(ptr+i))=='c')
+  {cre+=7*cr[2][i];
+   tp+=cr[2][i];}
+  else if(tolower(*(ptr+i))=='d')
+  {cre+=6*cr[2][i];
+   tp+=cr[2][i];}
+  else if(tolower(*(ptr+i))=='e')
+  {cre+=5*cr[2][i];
+   tp+=cr[2][i];}
+   else 
+  {cre+=0*cr[2][i];}
+  }
+ printf(“\nName\t%s”,stu.name);
+ printf(“\nRoll number\t%d,stu.rollno);
+ printf("\nTotal credit points earned\t%f",tp);
+ printf("\nTotal credits\t%f",cre);
+ gpa=cre/tp;
+ printf("\nYour gpa  is\t%.3f",gpa);
+ printf("\n\t\tEnter y or Y to continue");
+ scanf("%c",&ans);
+ system(“cls”);
+ free(ptr);
+ break;    
+}
+case 4:
+{ printf("\t******************DEPARTMENT OF ELECTRICAL AND ELECTRONICS******************");
+  ptr=(char *)malloc(8*sizeof(char));
+  printf("\nCS6465:"); scanf(" %c ",ptr+0);
+  printf("\nCS6461:"); scanf(" %c ",ptr+1);
+  printf("\nEE6401:"); scanf(" %c ",ptr+2);
+  printf("\nEE6402:"); scanf(" %c ",ptr+3);
+  printf("\nEE6403:"); scanf(" %c ",ptr+4);
+  printf("\nEE6404:"); scanf(" %c ",ptr+5);
+  printf("\nEE6411:"); scanf(" %c ",ptr+6);
+  printf("\nMA6459:"); scanf(" %c ",ptr+7);
+  cr[3][0]=3;cr[3][1]=2;cr[3][2]=4;cr[3][3]=3;cr[3][4]=3;cr[3][5]=3;cr[3][6]=2;cr[3][7]=4;
+  for(i=0;i<8;i++)
+  {
+  if(tolower(*(ptr+i))=='s')
+  { cre+=10*cr[3][i];
+   tp+=cr[3][i];}
+  else if(tolower(*(ptr+i))=='a')
+  {cre+=9*cr[3][i];
+   tp+=cr[3][i];}
+   else if(tolower(*(ptr+i))=='b')
+  {cre+=8*cr[3][i];
+   tp+=cr[3][i];}
+  else if(tolower(*(ptr+i))=='c')
+  {cre+=7*cr[3][i];
+   tp+=cr[3][i];}
+  else if(tolower(*(ptr+i))=='d')
+  {cre+=6*cr[3][i];
+   tp+=cr[3][i];}
+  else if(tolower(*(ptr+i))=='e')
+  {cre+=5*cr[3][i];
+   tp+=cr[3][i];}
+  else 
+  {cre+=0*cr[3][i];}
+  }
+ printf(“\nName\t%s”,stu.name);
+ printf(“\nRoll number\t%d,stu.rollno);
+ printf("\nTotal credit points earned\t%f",tp);
+ printf("\nTotal credits\t%f",cre);
+ gpa=cre/tp;
+ printf("\nYour gpa  is\t%.3f",gpa);
+ printf("\n\t\tEnter y or Y to continue");
+ scanf("%c",&ans);
+  system(“cls”);
+ free(ptr);
+ break;    
+}
+case 5:
+{   printf("\t******************DEPARTMENT OF ELECTRICAL AND ELECTRONICS******************");
+    ptr=(char *)malloc(9*sizeof(char));
+    printf("\nEE6501:"); scanf(" %c ",ptr+0);
+    printf("\nEE6502:"); scanf(" %c ",ptr+1);
+    printf("\nEE6503:"); scanf(" %c ",ptr+2);
+    printf("\nEE6504:"); scanf(" %c ",ptr+3);
+    printf("\nEE6511:"); scanf(" %c ",ptr+4);
+    printf("\nEE6512:"); scanf(" %c ",ptr+5);
+    printf("\nGE6563:"); scanf(" %c ",ptr+6);
+    printf("\nIC6501:"); scanf(" %c ",ptr+7);
+    printf("\nME6701:"); scanf(" %c ",ptr+8);
+    cr[4][0]=3;cr[4][1]=3;cr[4][2]=3;cr[4][3]=4;cr[4][4]=2;cr[4][5]=2;cr[4][6]=2;cr[4][7]=4;cr[4][8]=3;
+  for(i=0;i<9;i++)
+  {
+  if(tolower(*(ptr+i))=='s')
+  { cre+=10*cr[4][i];
+   tp+=cr[4][i];}  
+  else if(tolower(*(ptr+i))=='a')
+  {cre+=9*cr[4][i];
+   tp+=cr[4][i];}
+  else if(tolower(*(ptr+i))=='b')
+  {cre+=8*cr[4][i];
+   tp+=cr[4][i];}
+  else if(tolower(*(ptr+i))=='c')
+  {cre+=7*cr[4][i];
+   tp+=cr[4][i];}
+  else if(tolower(*(ptr+i))=='d')
+  {cre+=6*cr[4][i];
+   tp+=cr[4][i];}
+  else if(tolower(*(ptr+i))=='e')
+  {cre+=5*cr[4][i];
+   tp+=cr[4][i];}
+  else 
+  {cre+=0*cr[4][i];}
+  }
+ printf(“\nName\t%s”,stu.name);
+ printf(“\nRoll number\t%d”,stu.rollno);
+ printf("\nTotal credit points earned\t%f",tp);
+ printf("\nTotal credits\t%f",cre);
+ gpa=cre/tp;
+ printf("\nYour gpa  is\t%.3f",gpa);
+ printf("\n\t\tEnter y or Y to continue");
+ scanf("%c",&ans);
+ system(“cls”);
+ free(ptr);
+ break;    
+}
+case 6:
+{ printf("\t******************DEPARTMENT OF ELECTRICAL AND ELECTRONICS******************");
+ptr=(char *)malloc(9*sizeof(char));
+  printf("\nEC6651:"); scanf(" %c ",ptr+0);
+  printf("\nEE6601:"); scanf(" %c ",ptr+1);
+  printf("\nEE6602:"); scanf(" %c ",ptr+2);
+  printf("\nEE6603:"); scanf(" %c ",ptr+3);
+  printf("\nEE6604:"); scanf(" %c ",ptr+4);
+  printf("\nEE6611:"); scanf(" %c ",ptr+5);
+  printf("\nEE6612:"); scanf(" %c ",ptr+6);
+  printf("\nEE6613:"); scanf(" %c ",ptr+7);
+  ev[0]=elec1();
+  if(ev[0]==1) 
+   printf(“\nEE6001:”);
+  else if(ev[0]==2)
+   printf(“\nIC6601:”);
+  else if(ev[0]==3)
+   printf(“\nEE6002:”);
+  else
+   printf(“\nEE6003:”); 
+  scanf(" %c ",ptr+8);
+ cr[5][0]=3;cr[5][1]=3;cr[5][2]=3;cr[5][3]=3;cr[5][4]=4;cr[5][5]=2;cr[5][6]=2;cr[5][7]=1;cr[5][8]=3;
+  for(i=0;i<9;i++)
+  {
+  if(tolower(*(ptr+i))=='s')
+  { cre+=10*cr[5][i];
+   tp+=cr[5][i];}
+  else if(tolower(*(ptr+i))=='a')
+  {cre+=9*cr[5][i];
+   tp+=cr[5][i];}
+  else if(tolower(*(ptr+i))=='b')
+  {cre+=8*cr[5][i];
+   tp+=cr[5][i];}
+   else if(tolower(*(ptr+i))=='c')
+  {cre+=7*cr[5][i];
+   tp+=cr[5][i];}
+  else if(tolower(*(ptr+i))=='d')
+  {cre+=6*cr[5][i];
+   tp+=cr[5][i];}
+  else if(tolower(*(ptr+i))=='e')
+  {cre+=5*cr[5][i];
+   tp+=cr[5][i];}
+  else 
+  {cre+=0*cr[5][i];}
+ }
+ printf(“\nName\t%s”,stu.name);
+ printf(“\nRoll number\t%d,stu.rollno);
+ printf("\nTotal credit points earned\t%f",tp);
+ printf("\nTotal credits\t%f",cre);
+ gpa=cre/tp;
+ printf("\nYour gpa  is\t%.3f",gpa);
+ printf("\n\t\tEnter y or Y to continue");
+ scanf("%c",&ans);
+ system(“cls”);
+ free(ptr);
+ break;
+} 
+case 7:
+{ printf("\t******************DEPARTMENT OF ELECTRICAL AND ELECTRONICS******************");
+  ptr=(char *)malloc(8*sizeof(char));
+  printf("\nEE6701:"); scanf(" %c ",ptr+0);
+  printf("\nEE6702:"); scanf(" %c ",ptr+1);
+  printf("\nEE6703:"); scanf(" %c ",ptr+2);
+  printf("\nEE6711:"); scanf(" %c ",ptr+3);
+  printf("\nEE6712:"); scanf(" %c ",ptr+4);
+  ev[1]=elec2();
+  if(ev[1]==1)
+   {printf(“\nEL6703:”);}
+  else if(ev[1]==2)
+   {printf(“\nEL6704:”);}
+  else if(ev[1]==3)
+   {printf(“\nEE6004:”);}
+  else if(ev[1]==4)
+   {printf(“\nEE6005:”);}
+  else 
+   {printf(“\nEE6006:”);}
+  scanf(" %c ",ptr+5);
+  ev[2]=elec3();
+  if(ev[2]==1) 
+   {printf(“\nGE6081:”);}
+  else if(ev[2]==2) 
+   {printf(“\nIC6002:”);}
+  else if(ev[2]==3)
+   {printf(“\nEE6007:”);}
+  else 
+   {printf(“\nEE6008:”);}
+  scanf(" %c ",ptr+6);
+  printf("\nMG6851:"); scanf(" %c ",ptr+7);
+cr[6][0]=3;cr[6][1]=3;cr[6][2]=3;cr[6][3]=2;cr[6][4]=1;cr[6][5]=3;cr[6][6]=3;cr[6][7]=3;
+  for(i=0;i<8;i++)
+  {  if(tolower(*(ptr+i))!='u')
+     tp+=cr[6][i];
+  }
+  for(i=0;i<8;i++)
+  {
+  if(tolower(*(ptr+i))=='s')
+  { cre+=10*cr[6][i];
+   tp+=cr[6][i];}
+  else if(tolower(*(ptr+i))=='a')
+  {cre+=9*cr[6][i];
+   tp+=cr[6][i];}
+  else if(tolower(*(ptr+i))=='b')
+  {cre+=8*cr[6][i];
+   tp+=cr[6][i];}
+  else if(tolower(*(ptr+i))=='c')
+  {cre+=7*cr[6][i];
+   tp+=cr[6][i];}
+  else if(tolower(*(ptr+i))=='d')
+  {cre+=6*cr[6][i];
+   tp+=cr[6][i];}
+  else if(tolower(*(ptr+i))=='e')
+  {cre+=5*cr[6][i];
+   tp+=cr[6][i];}
+  else 
+  {cre+=0*cr[6][i];}
+ }
+ printf(“\nName\t%s”,stu.name);
+ printf(“\nRoll number\t%d,stu.rollno);
+ printf("\nTotal credit points earned\t%f",tp);
+ printf("\nTotal credits\t%f",cre);
+ gpa=cre/tp;
+ printf("\nYour gpa  is\t%.3f",gpa);
+ printf("\n\t\tEnter y or Y to continue");
+ scanf("%c",&ans);
+ system(“cls”);
+ free(ptr);
+ break;
+}
+case 8:
+{  printf("\t******************DEPARTMENT OF ELECTRICAL AND ELECTRONICS******************");
+  ptr=(char *)malloc(4*sizeof(char));
+  printf("\nEE6801:"); scanf(" %c ",ptr+0);
+  printf("\nEE6811:"); scanf(" %c ",ptr+1);
+  ev[3]=elec4();
+  if(ev[3]==1)
+   {printf(“\nEE6009:”);}
+  else if(ev[3]==3) 
+   {printf(“\nEE6011:”);}
+  else
+   {printf(“\nIC6003:”);}
+  scanf(" %c ",ptr+2);
+  ev[4]=elec5();
+  if(ev[4]==1)
+   {printf(“\nGE6075:”);}
+  else if(ev[4]==2)
+   {printf(“\nGE6757:”);}
+  else  if(ev[4]==3)
+   {printf(“\nEC6002:”);}
+  else if(ev[4]==4) 
+   {printf(“\nEE6012:”);}
+  else 
+   {printf(“\nEC6601:”);}
+  scanf(" %c ",ptr+3);
+cr[8][0]=3;cr[8][1]=6;cr[8][2]=3;cr[8][3]=3;
+    for(i=0;i<9;i++)
+  {
+     if(tolower(*(ptr+i))!='u')
+     tp+=cr[8][i];
+  }
+  for(i=0;i<4;i++)
+  {
+  if(tolower(*(ptr+i))=='s')
+  { cre+=10*cr[8][i];
+   tp+=cr[8][i];}
+  else if(tolower(*(ptr+i))=='a')
+  {cre+=9*cr[8][i];
+   tp+=cr[8][i];}
+  else if(tolower(*(ptr+i))=='b')
+  {cre+=8*cr[8][i];
+   tp+=cr[8][i];}
+  else if(tolower(*(ptr+i))=='c')
+  {cre+=7*cr[8][i];
+   tp+=cr[8][i];}
+  else if(tolower(*(ptr+i))=='d')
+  {cre+=6*cr[8][i];
+   tp+=cr[8][i];}
+  else if(tolower(*(ptr+i))=='e')
+  {cre+=5*cr[8][i];
+   tp+=cr[8][i];}
+  else 
+  {cre+=0*cr[8][i];}
+ }
+ printf(“\nName\t%s”,stu.name);
+ printf(“\nRoll number\t%d,stu.rollno);
+ printf("\nTotal credit points earned\t%f",tp);
+ printf("\nTotal credits\t%f",cre);
+ gpa=cre/tp;
+ printf("\nYour gpa  is\t%.3f",gpa);
+ printf("\n\t\tEnter y or Y to continue");
+ scanf("%c",&ans);
+ system(“cls”);
+ free(ptr);
+ break; 
+}
+default:printf("\n SELECT A VALID SEMESTER NUMBER(0-8)");
+}
+}while(ans=='Y'||ans=='y');
+getch();
+}

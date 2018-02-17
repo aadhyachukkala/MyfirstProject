@@ -1,0 +1,5 @@
+ELECTIVE 3
+1.GE6081:Fundamentals of Nanoscience
+2.IC6002:System Identification and Adaptive Control
+3.EE6007:Micro Electro Mechanical Systems
+4.EE6008:Microcontroller Based System Design

@@ -1,0 +1,5 @@
+ELECTIVE 1
+1.EE6001:Visual Languages and Applications
+2.IC6601:Advanced Control System
+3.EE6002:Power System Transients
+4.EE6003:Optimisation Techniques

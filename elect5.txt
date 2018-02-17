@@ -1,0 +1,6 @@
+ELECTIVE 5
+1.GE6075:Professional Ethics in Engineering
+2.GE6757:Total Quality Management
+3.EC6002:Advanced Digital Signal Processing
+4.EE6012:Computer Aided Design of Electrical Apparatus
+5.EC6601:VLSI Design

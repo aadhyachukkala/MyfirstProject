@@ -1,0 +1,6 @@
+ELECTIVE 2
+1.EI6703:Fibre Optics and Laser Instruments
+2.EI6704:Biomedical Instrumentation
+3.EE6004:Flexible AC Transmission Systems
+4.EE6005:Power Quality
+5.EE6006:Applied Soft Techniques
